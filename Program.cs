@@ -27,7 +27,7 @@ public class Rectangle : Shape
     }
     public override string ToString()
     {
-        return $"Rectangle area: " + Area + "\nPerimeter: " + Perimeter;
+        return $"Rectangle area: " + Area() + "\nPerimeter: " + Perimeter();
     }
 }
 
@@ -48,7 +48,7 @@ public class Square : Rectangle
 
     public override string ToString()
     {
-        return $"Square area: " + Area + "\nPerimeter: " + Perimeter;
+        return $"Square area: " + Area() + "\nPerimeter: " + Perimeter();
     }
 }
 
@@ -72,7 +72,7 @@ public class Circle : Shape
 
     public override string ToString()
     {
-        return $"Circle area: " + Area + "\nPerimeter: " + Perimeter;
+        return $"Circle area: " + Area() + "\nPerimeter: " + Perimeter();
     }
 }
 class Program
@@ -83,21 +83,20 @@ class Program
         int length = 2;
         int radius = 3;
 
-        /*        Console.WriteLine("Enter width: ");*/
         Shape shape = new Rectangle(width, length);
         Shape shape1 = new Square(length, width);
         Shape shape2 = new Circle(radius);
 
         shape.Area();
         shape.Perimeter();
-        shape.ToString();
+        Console.WriteLine(shape.ToString());
 
         shape1.Perimeter();
         shape1.Area();
-        shape1.ToString();
+        Console.WriteLine(shape1.ToString());
 
         shape2.Perimeter();
         shape2.Area();
-        shape2.ToString();
+        Console.WriteLine(shape2.ToString());
     }
 }
